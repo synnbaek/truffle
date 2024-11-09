@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFT Minting Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 상단바 -->
+    <header>
+        <h1>NFT Minting Platform</h1>
+        <button id="connectWalletButton">Connect Wallet</button>
+        <span id="userAddress">Not Connected</span>
+    </header>
+
+    <!-- NFT 소유 목록 섹션 -->
+    <section id="ownedNFTs">
+        <h2>My NFTs</h2>
+        <div id="nftList">
+            <!-- 사용자 소유 NFT 리스트가 표시될 영역 -->
+            <p>지갑을 연결하면 보유한 NFT가 여기에 표시됩니다.</p>
+        </div>
+    </section>
+
+    <!-- 새로운 NFT 등록 섹션 -->
+    <section id="registerNFT">
+        <h2>Register New NFT</h2>
+        <form id="nftForm">
+            <!-- NFT 이미지 업로드 -->
+            <label for="nftImage">Upload NFT Image</label>
+            <input type="file" id="nftImage" accept="image/*" required>
+
+            <!-- NFT 이름 -->
+            <label for="nftName">NFT Name</label>
+            <input type="text" id="nftName" placeholder="Enter NFT Name" required>
+
+            <!-- NFT 설명 -->
+            <label for="nftDescription">NFT Description</label>
+            <textarea id="nftDescription" placeholder="Enter NFT Description" required></textarea>
+
+            <!-- Mint NFT 버튼 -->
+            <button type="button" id="mintNFTButton">Mint NFT</button>
+        </form>
+        
+        <!-- Minting 진행 상태를 표시하는 Pop-up -->
+        <div id="mintingStatusPopup" style="display: none;">
+            <h3>Minting Status</h3>
+            <p id="ipfsStatus">Step 1: Uploading to IPFS...</p>
+            <p id="contractStatus">Step 2: Minting NFT on Blockchain...</p>
+        </div>
+    </section>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
